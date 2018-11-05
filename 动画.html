@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box  {
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button class="btn">go</button>
+
+    <br>
+
+    <div class="box"></div>
+    <button class="btn">显示</button>
+    <button class="btn">隐藏</button>
+    <button class="btn">切换</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    function f() {
+        $('.box').eq(0).animate({
+            width: 200
+        },1000).animate({
+            width: 50
+        },1000, f)
+    }
+    $('.btn').eq(0).click(function () {
+        f()
+    });
+
+    $('.btn').eq(1).click(function () {
+        $('.box').eq(1).fadeIn(1000)
+    });
+    $('.btn').eq(2).click(function () {
+        $('.box').eq(1).fadeOut(1000)
+    });
+    $('.btn').eq(3).click(function () {
+        $('.box').eq(1).fadeToggle(1000)
+    })
+</script>
+</html>
