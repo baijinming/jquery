@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button class="btn">添加一个蓝盒子</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+    let lanBox = $('<div></div>').addClass('box').css('background-color', 'blue');
+    $('.btn').click(function () {
+        $('.box').after(lanBox)
+    })
+</script>
+</html>
