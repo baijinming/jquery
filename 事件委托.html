@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">添加</button>
+    <input id="input" type="text">
+    <ul>
+        <li>li的内容</li>
+    </ul>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // let btn = document.getElementById('btn');
+    // let input = document.getElementById('input');
+    // let ul = document.getElementsByTagName('ul')[0];
+    //
+    // btn.onclick = function () {
+    //     let value = input.value;
+    //     let li = document.createElement('li');
+    //     li.innerText = value;
+    //     ul.appendChild(li);
+    //     input.value = ''
+    // };
+    //
+    // //事件委托
+    // ul.onclick = function (event) {
+    //     if(event.target.nodeName = 'li'){
+    //         alert(event.target.innerText)
+    //     }
+    // }
+
+    $('#btn').click(function () {
+        let value = $('#input').val();
+        $('ul').append(`<li>${value}</li>`);
+        $('#input').val('')
+    })
+
+    $('ul').on('click', 'li', function () {
+        alert($(this).text())
+    })
+</script>
+</html>
